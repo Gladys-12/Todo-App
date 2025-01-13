@@ -1,0 +1,91 @@
+/* src/App.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #f0f8ff, #7cbdd2);
+}
+
+.app {
+  text-align: center;
+  padding: 30px;
+  min-height: 100vh; /* Covers entire viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box; /* Includes padding in width/height calculations */
+}
+
+.todo-list {
+  width: 90%; /* Occupies 90% of the screen width */
+  max-width: 800px; /* Maximum width for larger screens */
+  margin: 0 auto;
+  background: white; /* White background for the todo list */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box; /* Ensures padding doesn't exceed width */
+}
+
+.todo-list > div {
+  background: #fafafa;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word; /* Prevents long words from overflowing */
+}
+
+.todo-list input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  width: calc(100% - 22px); /* Full width with padding adjustment */
+  margin-bottom: 10px;
+}
+
+.todo-list button {
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px 15px;
+}
+
+/* Add spacing between Complete and Delete buttons */
+.todo-list > div > div {
+  display: flex;
+  gap: 10px; /* Creates consistent space between buttons */
+}
+
+.todo-list button:hover {
+  background: #0056b3;
+}
+
+/* Media Queries for Small Screens */
+@media (max-width: 768px) {
+  .todo-list {
+    width: 100%; /* Takes full width on smaller screens */
+    margin: 0;
+    padding: 15px;
+  }
+
+  .todo-list > div {
+    flex-direction: column; /* Stacks elements vertically */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .todo-list button {
+    width: 100%; /* Full-width buttons for mobile devices */
+    margin-top: 5px;
+  }
+
+  .todo-list > div > div {
+    width: 100%; /* Adjust buttons to stack horizontally */
+    justify-content: space-between;
+  }
+}
